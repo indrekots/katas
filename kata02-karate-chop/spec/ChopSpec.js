@@ -1,5 +1,5 @@
 describe("Chop", function() {
-  var chop = require('../chop');
+  var chop = require('../chop-loop');
 
   it("should be able to do binary search", function() {
     expect(chop(3, [])).toBe(-1);
