@@ -1,19 +1,19 @@
 function chop(int, array) {
-  if (array.length == 0) {
-    return -1;
-  }
+  var innerChop = function(left, right) {
+    if (left > right) return -1;
+    var m = Math.floor((left + right)/2);
 
-  var m = Math.floor((array.length -1)/2);
-
-  if (array[m] < int) {
-    return chop(int, array.slice(m + 1));
+    if (array[m] < int) {
+      return innerChop(m + 1, right);
+    }
+    else if (array[m] > int) {
+      return innerChop(left, m - 1);
+    }
+    else {
+      return m;
+    }
   }
-  else if (array[m] > int) {
-    return chop(int, array.slice(0, m));
-  }
-  else {
-    return m;
-  }
+  return innerChop(0, array.length - 1);
 }
 
 module.exports = chop;
