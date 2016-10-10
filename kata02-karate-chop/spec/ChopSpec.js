@@ -2,6 +2,7 @@ describe("Chop implementation with loops", function() {
   var chopImplementations = [];
   chopImplementations.push({name: 'chop-loop', impl: require('../chop-loop')});
   chopImplementations.push({name: 'chop-recursion', impl: require('../chop-recursion')});
+  chopImplementations.push({name: 'chop-recursion2', impl: require('../chop-recursion2')});
 
   for (var chop of chopImplementations) {
     (function(chop) {
